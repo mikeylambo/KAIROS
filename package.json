@@ -1,0 +1,23 @@
+{
+  "name": "kairos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "KAIROS: 2.5D action-RPG roguelite with speed traversal, launch-and-chase combat, and the 30-minute clock.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "check": "tsc --noEmit",
+    "test": "tsc --outDir dist-test --module esnext --target es2022 --moduleResolution bundler --noEmit false && node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@slu/web-shell": "git+https://github.com/mikeylambo/web-game-shell-v1.02.git#6f08d17c2f1012b19e6e26c87c640762354eb0ec",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.180.0",
+    "typescript": "^5.8.3",
+    "vite": "^5.4.14"
+  }
+}
