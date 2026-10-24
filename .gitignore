@@ -1,7 +1,5 @@
-node_modules
-dist
-dist-test
-.DS_Store
-*.log
-.vercel
-.env*
+.godot/
+build/
+screens/*.png
+*.tmp
+export_credentials.cfg
