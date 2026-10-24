@@ -1,4 +1,4 @@
-import { type GenreFrame, flow } from "@slu/web-shell";
+import { type GenreFrame, flow } from "../shell/contracts";
 
 /**
  * Renderer-neutral frame for high-speed 3D combat built around burst movement,

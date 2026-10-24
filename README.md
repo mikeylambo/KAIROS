@@ -22,7 +22,7 @@ A continuous, playable vertical slice of **KAIROS** — a 2.5D action-RPG roguel
 ## Technical Foundation & Shell Integration
 
 ### Base Shell
-- Built on **`@slu/web-shell` v1.1.0** from `main` of `mikeylambo/web-game-shell-v1.02` pinned to commit **`6f08d17c2f1012b19e6e26c87c640762354eb0ec`** (Sep 11, 2026).
+- Shell contracts vendored in `src/ported/shell/contracts.ts` from **`@slu/web-shell` v1.1.0** from `main` of `mikeylambo/web-game-shell-v1.02` pinned to commit **`6f08d17c2f1012b19e6e26c87c640762354eb0ec`** (Sep 11, 2026).
 - Systems utilized:
   - `DeterministicRNG` for seeded generation and replay verification
   - Input system schema and action bindings

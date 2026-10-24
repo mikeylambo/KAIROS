@@ -1,4 +1,4 @@
-import type { InputAction, InputBinding } from "@slu/web-shell";
+import type { InputAction, InputBinding } from "../shell/contracts";
 
 export class BrowserInputSource {
   private keys = new Set<string>();
