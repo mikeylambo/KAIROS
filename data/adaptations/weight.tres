@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AdaptationDef" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_e1eol"]
+[ext_resource type="Script" path="res://scripts/data/AdaptationDef.gd" id="2_hok57"]
+
+[sub_resource type="Resource" id="Resource_rpees"]
+script = ExtResource("1_e1eol")
+kind = "stat_add"
+stat = &"pin_f"
+value = 60.0
+
+[sub_resource type="Resource" id="Resource_61yd4"]
+script = ExtResource("1_e1eol")
+stat = &"crush"
+value = 1.55
+
+[sub_resource type="Resource" id="Resource_wx6nk"]
+script = ExtResource("1_e1eol")
+stat = &"fly_speed"
+value = 0.7
+
+[resource]
+script = ExtResource("2_hok57")
+id = &"weight"
+display_name = "Weight"
+glyph = "▼"
+description = "Hits pin for 60f and crush ×1.55. Flight speed ×0.7."
+effects = Array[ExtResource("1_e1eol")]([SubResource("Resource_rpees"), SubResource("Resource_61yd4"), SubResource("Resource_wx6nk")])
+marks_dimension = &"skyreach"

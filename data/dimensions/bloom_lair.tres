@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DimensionDef" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_ntx34"]
+[ext_resource type="Script" path="res://scripts/data/DimensionDef.gd" id="2_d131u"]
+
+[resource]
+script = ExtResource("2_d131u")
+id = &"bloom_lair"
+display_name = "The Bloom's Lair"
+band = 2
+chunks_wide = 1
+rule_text = "The threat"
+palette = PackedColorArray(0.078431375, 0.03137255, 0.07058824, 1, 0.16470589, 0.05882353, 0.14901961, 1, 0.3019608, 0.101960786, 0.27058825, 1, 0.5411765, 0.18431373, 0.47843137, 1, 1, 0.81960785, 0.9490196, 1)
+music_key = &"music_bloom_lair"
+chunk_pool = &"bloom_lair"
+enemy_table = PackedStringArray()
+enemy_target = 0
+map_pos = Vector2(0.86, 0.5)

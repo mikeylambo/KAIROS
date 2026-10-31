@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyDef.gd" id="1_hwq27"]
+
+[resource]
+script = ExtResource("1_hwq27")
+id = &"gunner"
+display_name = "Gunner"
+behavior = &"gunner"
+hp = 140.0
+size = Vector2(1.4, 2)
+speed = 7.0
+windup_f = 34
+attack_range = 22.0
+heavy_attack = true
+xp = 30.0
+color = Color(0.56078434, 0.5058824, 0.47058824, 1)

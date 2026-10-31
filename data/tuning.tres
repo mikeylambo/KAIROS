@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="KairosTuning" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/KairosTuning.gd" id="1_r17dr"]
+
+[resource]
+script = ExtResource("1_r17dr")
+threshold_marks = PackedFloat32Array(600, 1200, 1680)
+light_startup = PackedInt32Array(4, 4, 5)
+light_recovery = PackedInt32Array(10, 10, 16)
+light_damage = PackedFloat32Array(25, 35, 55)

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyDef.gd" id="1_toqm6"]
+
+[resource]
+script = ExtResource("1_toqm6")
+id = &"slammer"
+display_name = "Slammer"
+behavior = &"slammer"
+hp = 320.0
+armor = 3
+size = Vector2(2.2, 2.4)
+speed = 7.0
+windup_f = 36
+attack_range = 10.0
+heavy_attack = true
+xp = 45.0
+color = Color(0.47843137, 0.42745098, 0.4, 1)

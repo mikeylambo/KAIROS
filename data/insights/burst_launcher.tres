@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InsightDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/InsightDef.gd" id="1_oy40h"]
+
+[resource]
+script = ExtResource("1_oy40h")
+id = &"burst_launcher"
+display_name = "Burst Launcher"
+description = "Launch out of a burst without losing speed."
+context = &"heavy_while_bursting"
+grants_flag = &"burst_launcher"

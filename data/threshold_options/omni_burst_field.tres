@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ThresholdOptionDef" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_xiv7x"]
+[ext_resource type="Script" path="res://scripts/data/ThresholdOptionDef.gd" id="2_hfvso"]
+
+[sub_resource type="Resource" id="Resource_hmxa0"]
+script = ExtResource("1_xiv7x")
+stat = &"field_radius"
+value = 1.6
+
+[sub_resource type="Resource" id="Resource_5fj6p"]
+script = ExtResource("1_xiv7x")
+kind = "flag"
+stat = &"field_reflect"
+
+[resource]
+script = ExtResource("2_hfvso")
+id = &"omni_burst_field"
+display_name = "Omni-Burst Field"
+description = "Field radius +60%, reflects bolts."
+effects = Array[ExtResource("1_xiv7x")]([SubResource("Resource_hmxa0"), SubResource("Resource_5fj6p")])

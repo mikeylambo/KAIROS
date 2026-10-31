@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ThresholdOptionDef" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_w0hxm"]
+[ext_resource type="Script" path="res://scripts/data/ThresholdOptionDef.gd" id="2_xfqoj"]
+
+[sub_resource type="Resource" id="Resource_6qmcu"]
+script = ExtResource("1_w0hxm")
+stat = &"beam_charge_rate"
+value = 1.4
+
+[sub_resource type="Resource" id="Resource_yr0m4"]
+script = ExtResource("1_w0hxm")
+stat = &"beam_width"
+value = 1.5
+
+[resource]
+script = ExtResource("2_xfqoj")
+id = &"resonant_beam"
+display_name = "Resonant Beam"
+description = "Beam charge 40% faster, +50% width."
+effects = Array[ExtResource("1_w0hxm")]([SubResource("Resource_6qmcu"), SubResource("Resource_yr0m4")])

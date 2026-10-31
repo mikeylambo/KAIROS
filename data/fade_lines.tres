@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StringList" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/StringList.gd" id="1_ug4kl"]
+
+[resource]
+script = ExtResource("1_ug4kl")
+items = PackedStringArray("Thirty minutes. I spent every one.", "Brighter than the world could hold. That was enough.", "Nothing could touch me. Only this.", "I was never meant to stay. Only to burn.", "Remember the light, not the length.")

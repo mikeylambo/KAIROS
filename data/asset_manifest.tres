@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="AssetManifest" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/AssetManifest.gd" id="1_w38qt"]
+
+[resource]
+script = ExtResource("1_w38qt")
+entries = {
+"bg_corridor_0": "res://assets/backgrounds/corridor/layer_0.png",
+"bg_corridor_1": "res://assets/backgrounds/corridor/layer_1.png",
+"bg_corridor_2": "res://assets/backgrounds/corridor/layer_2.png",
+"bg_corridor_3": "res://assets/backgrounds/corridor/layer_3.png",
+"bg_corridor_4": "res://assets/backgrounds/corridor/layer_4.png",
+"bg_leadfall_0": "res://assets/backgrounds/leadfall/layer_0.png",
+"bg_leadfall_1": "res://assets/backgrounds/leadfall/layer_1.png",
+"bg_leadfall_2": "res://assets/backgrounds/leadfall/layer_2.png",
+"bg_leadfall_3": "res://assets/backgrounds/leadfall/layer_3.png",
+"bg_leadfall_4": "res://assets/backgrounds/leadfall/layer_4.png",
+"bg_skyreach_0": "res://assets/backgrounds/skyreach/layer_0.png",
+"bg_skyreach_1": "res://assets/backgrounds/skyreach/layer_1.png",
+"bg_skyreach_2": "res://assets/backgrounds/skyreach/layer_2.png",
+"bg_skyreach_3": "res://assets/backgrounds/skyreach/layer_3.png",
+"bg_skyreach_4": "res://assets/backgrounds/skyreach/layer_4.png",
+"bg_threshold_0": "res://assets/backgrounds/threshold/layer_0.png",
+"bg_threshold_1": "res://assets/backgrounds/threshold/layer_1.png",
+"bg_threshold_2": "res://assets/backgrounds/threshold/layer_2.png",
+"bg_threshold_3": "res://assets/backgrounds/threshold/layer_3.png",
+"bg_threshold_4": "res://assets/backgrounds/threshold/layer_4.png",
+"sprite_bloom": "res://assets/sprites/bloom/bloom.tres",
+"sprite_brute": "res://assets/sprites/brute/brute.tres",
+"sprite_drone": "res://assets/sprites/drone/drone.tres",
+"sprite_flyer": "res://assets/sprites/flyer/flyer.tres",
+"sprite_gunner": "res://assets/sprites/gunner/gunner.tres",
+"sprite_lancer": "res://assets/sprites/lancer/lancer.tres",
+"sprite_slammer": "res://assets/sprites/slammer/slammer.tres",
+"sprite_zenith": "res://assets/sprites/zenith/zenith.tres"
+}

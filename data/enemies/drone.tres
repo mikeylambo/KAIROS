@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyDef.gd" id="1_56u8r"]
+
+[resource]
+script = ExtResource("1_56u8r")
+id = &"drone"
+display_name = "Crisis Drone"
+flies = true
+size = Vector2(1.2, 1)
+speed = 9.0
+attack_range = 7.0
+color = Color(0.5529412, 0.5921569, 0.6784314, 1)

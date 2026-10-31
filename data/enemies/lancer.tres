@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyDef.gd" id="1_rb0id"]
+
+[resource]
+script = ExtResource("1_rb0id")
+id = &"lancer"
+display_name = "Lancer"
+behavior = &"lancer"
+hp = 180.0
+flies = true
+size = Vector2(2.4, 1.2)
+speed = 10.0
+windup_f = 44
+attack_range = 30.0
+heavy_attack = true
+xp = 32.0
+color = Color(0.47843137, 0.6509804, 0.76862746, 1)

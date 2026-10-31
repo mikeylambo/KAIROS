@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="FxRecipeSet" load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/FxRecipe.gd" id="1_npgdc"]
+[ext_resource type="Script" path="res://scripts/data/FxRecipeSet.gd" id="2_nf2d7"]
+
+[sub_resource type="Resource" id="Resource_u3qk7"]
+script = ExtResource("1_npgdc")
+id = &"spark_s"
+count = 6
+lifetime = 0.18
+speed = Vector2(6, 14)
+size = Vector2(2, 4)
+colors = PackedColorArray(1, 1, 1, 1, 0.24705882, 0.9647059, 1, 1)
+shake_px = 2.0
+sfx = &"hit_light"
+
+[sub_resource type="Resource" id="Resource_pkuyn"]
+script = ExtResource("1_npgdc")
+id = &"spark_m"
+count = 10
+lifetime = 0.24
+speed = Vector2(8, 20)
+size = Vector2(3, 6)
+colors = PackedColorArray(1, 1, 1, 1, 0.24705882, 0.9647059, 1, 1, 1, 0.24705882, 0.84705883, 1)
+shake_px = 4.0
+sfx = &"hit_light"
+
+[sub_resource type="Resource" id="Resource_to3d1"]
+script = ExtResource("1_npgdc")
+id = &"spark_l"
+count = 18
+lifetime = 0.32
+speed = Vector2(12, 30)
+size = Vector2(4, 9)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.24705882, 0.84705883, 1, 0.24705882, 0.9647059, 1, 1)
+shake_px = 6.0
+flash = 1.0
+sfx = &"hit_heavy"
+
+[sub_resource type="Resource" id="Resource_t431i"]
+script = ExtResource("1_npgdc")
+id = &"transmit_ring"
+family = &"ring"
+count = 1
+lifetime = 0.3
+speed = Vector2(0, 0)
+size = Vector2(1, 4)
+colors = PackedColorArray(0.24705882, 0.9647059, 1, 1)
+sfx = &"transmit"
+
+[sub_resource type="Resource" id="Resource_1ppia"]
+script = ExtResource("1_npgdc")
+id = &"field_wave"
+family = &"ring"
+count = 1
+lifetime = 0.35
+speed = Vector2(0, 0)
+size = Vector2(1, 10)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.24705882, 0.84705883, 1)
+shake_px = 5.0
+flash = 0.6
+sfx = &"field"
+
+[sub_resource type="Resource" id="Resource_uwxot"]
+script = ExtResource("1_npgdc")
+id = &"beam_impact"
+count = 24
+lifetime = 0.4
+speed = Vector2(10, 34)
+size = Vector2(4, 10)
+colors = PackedColorArray(1, 1, 1, 1, 0.24705882, 0.9647059, 1, 1, 1, 0.24705882, 0.84705883, 1)
+shake_px = 8.0
+flash = 1.0
+sfx = &"beam_end"
+
+[sub_resource type="Resource" id="Resource_7b1yn"]
+script = ExtResource("1_npgdc")
+id = &"guard_chime"
+family = &"ring"
+count = 1
+speed = Vector2(0, 0)
+size = Vector2(1, 3)
+colors = PackedColorArray(1, 1, 1, 1)
+flash = 0.3
+sfx = &"perfect"
+
+[sub_resource type="Resource" id="Resource_stob6"]
+script = ExtResource("1_npgdc")
+id = &"time_shard"
+lifetime = 0.3
+speed = Vector2(4, 10)
+size = Vector2(2, 5)
+colors = PackedColorArray(1, 0.5411765, 0.12156863, 1, 1, 1, 1, 1)
+shake_px = 3.0
+sfx = &"time_loss"
+
+[sub_resource type="Resource" id="Resource_pvl54"]
+script = ExtResource("1_npgdc")
+id = &"dust"
+count = 10
+lifetime = 0.4
+speed = Vector2(2, 8)
+size = Vector2(3, 8)
+colors = PackedColorArray(0.70980394, 0.6666667, 0.627451, 1)
+shake_px = 3.0
+
+[sub_resource type="Resource" id="Resource_par0v"]
+script = ExtResource("1_npgdc")
+id = &"feathers"
+lifetime = 0.6
+speed = Vector2(2, 6)
+size = Vector2(2, 5)
+colors = PackedColorArray(0.8862745, 0.9411765, 0.9647059, 1, 0.24705882, 0.9647059, 1, 1)
+
+[sub_resource type="Resource" id="Resource_qv1gt"]
+script = ExtResource("1_npgdc")
+id = &"bloom_burst"
+count = 16
+lifetime = 0.5
+speed = Vector2(6, 18)
+size = Vector2(3, 8)
+colors = PackedColorArray(1, 0.24705882, 0.84705883, 1, 1, 0.81960785, 0.9490196, 1)
+shake_px = 4.0
+sfx = &"hit_heavy"
+
+[resource]
+script = ExtResource("2_nf2d7")
+recipes = Array[ExtResource("1_npgdc")]([SubResource("Resource_u3qk7"), SubResource("Resource_pkuyn"), SubResource("Resource_to3d1"), SubResource("Resource_t431i"), SubResource("Resource_1ppia"), SubResource("Resource_uwxot"), SubResource("Resource_7b1yn"), SubResource("Resource_stob6"), SubResource("Resource_pvl54"), SubResource("Resource_par0v"), SubResource("Resource_qv1gt")])

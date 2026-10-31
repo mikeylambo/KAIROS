@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DimensionDef" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_cbaal"]
+[ext_resource type="Script" path="res://scripts/data/DimensionDef.gd" id="2_wlqxm"]
+
+[sub_resource type="Resource" id="Resource_0s4na"]
+script = ExtResource("1_cbaal")
+stat = &"gravity"
+value = 2.0
+
+[resource]
+script = ExtResource("2_wlqxm")
+id = &"leadfall"
+display_name = "Leadfall"
+band = 2
+rules = Array[ExtResource("1_cbaal")]([SubResource("Resource_0s4na")])
+rule_text = "Gravity ×2"
+adaptation_id = &"weight"
+palette = PackedColorArray(0.11372549, 0.101960786, 0.101960786, 1, 0.22745098, 0.19607843, 0.1882353, 1, 0.36862746, 0.32941177, 0.3137255, 1, 0.54509807, 0.5058824, 0.47843137, 1, 0.70980394, 0.6666667, 0.627451, 1)
+music_key = &"music_leadfall"
+chunk_pool = &"leadfall"
+enemy_table = PackedStringArray("slammer", "gunner", "gunner")
+map_pos = Vector2(0.52, 0.3)

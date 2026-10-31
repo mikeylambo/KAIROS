@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="AdaptationDef" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_s5vqc"]
+[ext_resource type="Script" path="res://scripts/data/AdaptationDef.gd" id="2_pvd4f"]
+
+[sub_resource type="Resource" id="Resource_a1kpx"]
+script = ExtResource("1_s5vqc")
+kind = "flag"
+stat = &"hover_combat"
+
+[sub_resource type="Resource" id="Resource_7jwhr"]
+script = ExtResource("1_s5vqc")
+stat = &"knockback_taken"
+value = 1.45
+
+[resource]
+script = ExtResource("2_pvd4f")
+id = &"lift"
+display_name = "Lift"
+glyph = "▲"
+description = "Full-speed hover combat. Knockback taken ×1.45."
+effects = Array[ExtResource("1_s5vqc")]([SubResource("Resource_a1kpx"), SubResource("Resource_7jwhr")])

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DimensionDef" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_itg03"]
+[ext_resource type="Script" path="res://scripts/data/DimensionDef.gd" id="2_5xwl3"]
+
+[resource]
+script = ExtResource("2_5xwl3")
+id = &"threshold"
+display_name = "The Threshold"
+rule_text = "—"
+palette = PackedColorArray(0.105882354, 0.13333334, 0.2, 1, 0.17254902, 0.20784314, 0.3137255, 1, 0.3372549, 0.3764706, 0.4862745, 1, 0.6039216, 0.6392157, 0.72156864, 1, 0.7882353, 0.8117647, 0.8627451, 1)
+music_key = &"music_threshold"
+chunk_pool = &"threshold"
+enemy_table = PackedStringArray("drone", "drone", "drone", "brute")
+map_pos = Vector2(0.18, 0.55)

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyDef.gd" id="1_qyr7c"]
+
+[resource]
+script = ExtResource("1_qyr7c")
+id = &"bloom_spore"
+display_name = "Spore"
+behavior = &"spore"
+hp = 30.0
+flies = true
+size = Vector2(0.8, 0.8)
+speed = 6.0
+windup_f = 20
+attack_range = 4.0
+xp = 3.0
+color = Color(0.8509804, 0.30980393, 0.72156864, 1)

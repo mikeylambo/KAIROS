@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="AssetManifest" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/AssetManifest.gd" id="1_hdvs2"]
+
+[resource]
+script = ExtResource("1_hdvs2")
+entries = {
+"beam_charge": "res://assets/audio/sfx/beam_charge.ogg",
+"beam_end": "res://assets/audio/sfx/beam_end.ogg",
+"beam_fire": "res://assets/audio/sfx/beam_fire.ogg",
+"bloom_roar": "res://assets/audio/sfx/bloom_roar.ogg",
+"burst": "res://assets/audio/sfx/burst.ogg",
+"crack": "res://assets/audio/sfx/crack.ogg",
+"field": "res://assets/audio/sfx/field.ogg",
+"hit_heavy": "res://assets/audio/sfx/hit_heavy.ogg",
+"hit_light": "res://assets/audio/sfx/hit_light.ogg",
+"jump": "res://assets/audio/sfx/jump.ogg",
+"music_corridor": "res://assets/audio/music/music_corridor.ogg",
+"music_fade_fight": "res://assets/audio/music/music_fade_fight.ogg",
+"music_leadfall": "res://assets/audio/music/music_leadfall.ogg",
+"music_overflow": "res://assets/audio/music/music_overflow.ogg",
+"music_skyreach": "res://assets/audio/music/music_skyreach.ogg",
+"music_threshold": "res://assets/audio/music/music_threshold.ogg",
+"music_title": "res://assets/audio/music/music_title.ogg",
+"perfect": "res://assets/audio/sfx/perfect.ogg",
+"threshold": "res://assets/audio/sfx/threshold.ogg",
+"time_loss": "res://assets/audio/sfx/time_loss.ogg",
+"transmit": "res://assets/audio/sfx/transmit.ogg",
+"ui_move": "res://assets/audio/sfx/ui_move.ogg",
+"ui_select": "res://assets/audio/sfx/ui_select.ogg",
+"whiff": "res://assets/audio/sfx/whiff.ogg"
+}

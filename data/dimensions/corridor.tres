@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DimensionDef" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_j02or"]
+[ext_resource type="Script" path="res://scripts/data/DimensionDef.gd" id="2_wtett"]
+
+[resource]
+script = ExtResource("2_wtett")
+id = &"corridor"
+display_name = "The Corridor"
+band = 0
+grounded = false
+chunks_wide = 1
+rule_text = "Free passage"
+palette = PackedColorArray(0.019607844, 0.019607844, 0.043137256, 1, 0.050980393, 0.043137256, 0.11764706, 1, 0.11372549, 0.09411765, 0.2509804, 1, 0.2901961, 0.24705882, 0.5411765, 1, 0.78431374, 0.7529412, 1, 1)
+music_key = &"music_corridor"
+chunk_pool = &"corridor"
+enemy_table = PackedStringArray()
+enemy_target = 0
+map_pos = Vector2(0.36, 0.55)
+is_corridor = true

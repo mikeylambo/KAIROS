@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyDef.gd" id="1_enbfl"]
+
+[resource]
+script = ExtResource("1_enbfl")
+id = &"brute"
+display_name = "Brute"
+behavior = &"brute"
+hp = 220.0
+size = Vector2(2, 2.6)
+speed = 6.0
+windup_f = 40
+attack_range = 4.5
+heavy_attack = true
+xp = 30.0
+color = Color(0.42745098, 0.4627451, 0.5647059, 1)

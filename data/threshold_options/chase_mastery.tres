@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ThresholdOptionDef" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_c0kqj"]
+[ext_resource type="Script" path="res://scripts/data/ThresholdOptionDef.gd" id="2_s0exn"]
+
+[sub_resource type="Resource" id="Resource_15cnj"]
+script = ExtResource("1_c0kqj")
+kind = "stat_add"
+stat = &"chase_window_f"
+value = 40.0
+
+[sub_resource type="Resource" id="Resource_rl8yh"]
+script = ExtResource("1_c0kqj")
+kind = "stat_add"
+stat = &"chase_arrival_dmg"
+value = 40.0
+
+[resource]
+script = ExtResource("2_s0exn")
+id = &"chase_mastery"
+display_name = "Chase Mastery"
+category = "passive"
+description = "Chase window +40f; chase arrival deals 40."
+effects = Array[ExtResource("1_c0kqj")]([SubResource("Resource_15cnj"), SubResource("Resource_rl8yh")])

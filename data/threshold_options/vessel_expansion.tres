@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ThresholdOptionDef" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_ul5ub"]
+[ext_resource type="Script" path="res://scripts/data/ThresholdOptionDef.gd" id="2_p180i"]
+
+[sub_resource type="Resource" id="Resource_8mtkp"]
+script = ExtResource("1_ul5ub")
+kind = "stat_add"
+stat = &"ki_max"
+value = 50.0
+
+[resource]
+script = ExtResource("2_p180i")
+id = &"vessel_expansion"
+display_name = "Vessel Expansion"
+category = "ki"
+description = "Max ki 150."
+effects = Array[ExtResource("1_ul5ub")]([SubResource("Resource_8mtkp")])

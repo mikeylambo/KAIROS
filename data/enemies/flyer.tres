@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyDef.gd" id="1_g0ogr"]
+
+[resource]
+script = ExtResource("1_g0ogr")
+id = &"flyer"
+display_name = "Skyreach Flyer"
+behavior = &"flyer"
+hp = 90.0
+flies = true
+size = Vector2(1.4, 1)
+speed = 14.0
+windup_f = 26
+attack_range = 8.0
+xp = 18.0
+color = Color(0.6117647, 0.76862746, 0.8627451, 1)

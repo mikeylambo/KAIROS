@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="DimensionDef" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_hd5i1"]
+[ext_resource type="Script" path="res://scripts/data/DimensionDef.gd" id="2_xg24u"]
+
+[sub_resource type="Resource" id="Resource_vmpj8"]
+script = ExtResource("1_hd5i1")
+kind = "flag"
+stat = &"no_ground"
+
+[sub_resource type="Resource" id="Resource_k8ghh"]
+script = ExtResource("1_hd5i1")
+kind = "flag"
+stat = &"enemies_fly"
+
+[resource]
+script = ExtResource("2_xg24u")
+id = &"skyreach"
+display_name = "Skyreach"
+band = 2
+grounded = false
+chunks_tall = 3
+rules = Array[ExtResource("1_hd5i1")]([SubResource("Resource_vmpj8"), SubResource("Resource_k8ghh")])
+rule_text = "No ground"
+adaptation_id = &"lift"
+palette = PackedColorArray(0.08627451, 0.14117648, 0.21176471, 1, 0.14117648, 0.25882354, 0.36862746, 1, 0.29411766, 0.47843137, 0.627451, 1, 0.6117647, 0.76862746, 0.8627451, 1, 0.8862745, 0.9411765, 0.9647059, 1)
+music_key = &"music_skyreach"
+chunk_pool = &"skyreach"
+enemy_table = PackedStringArray("flyer", "flyer", "lancer")
+map_pos = Vector2(0.55, 0.78)

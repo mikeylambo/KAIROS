@@ -8,6 +8,16 @@ config/description="Zenith exists for exactly 30 minutes."
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[autoload]
+
+Events="*res://scripts/autoload/Events.gd"
+Tuning="*res://scripts/autoload/Tuning.gd"
+Profile="*res://scripts/autoload/Profile.gd"
+Multiverse="*res://scripts/autoload/Multiverse.gd"
+Run="*res://scripts/autoload/Run.gd"
+Dev="*res://scripts/autoload/Dev.gd"
+Audio="*res://scripts/autoload/Audio.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -93,5 +103,6 @@ common/max_physics_steps_per_frame=8
 
 [rendering]
 
+viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0.03, 0.03, 0.05, 1)
 anti_aliasing/quality/msaa_2d=1

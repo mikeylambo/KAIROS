@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InsightDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/InsightDef.gd" id="1_8cf0n"]
+
+[resource]
+script = ExtResource("1_8cf0n")
+id = &"transmission_beam"
+display_name = "Transmission Beam"
+description = "Fire the beam straight out of a transmit."
+context = &"beam_after_transmit"
+grants_flag = &"transmission_beam"

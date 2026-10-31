@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ThresholdOptionDef" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EffectDef.gd" id="1_garrt"]
+[ext_resource type="Script" path="res://scripts/data/ThresholdOptionDef.gd" id="2_0han0"]
+
+[sub_resource type="Resource" id="Resource_jc3a4"]
+script = ExtResource("1_garrt")
+stat = &"ki_gain"
+value = 1.5
+
+[sub_resource type="Resource" id="Resource_jyoq7"]
+script = ExtResource("1_garrt")
+stat = &"transmit_recovery"
+value = 0.0
+
+[resource]
+script = ExtResource("2_0han0")
+id = &"martial_fluency"
+display_name = "Martial Fluency"
+category = "passive"
+description = "+50% ki on hit. Transmit recovery 0f."
+effects = Array[ExtResource("1_garrt")]([SubResource("Resource_jc3a4"), SubResource("Resource_jyoq7")])
