@@ -103,6 +103,12 @@ func _ready() -> void:
 		sim.director = director
 	Audio.cue_for_dimension(Multiverse.current)
 
+func _exit_tree() -> void:
+	if director:
+		director.teardown()
+	if Run.sim == sim:
+		Run.active = false
+
 func _on_finished(s: Dictionary) -> void:
 	summary = s
 	ended = true

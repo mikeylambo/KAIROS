@@ -28,7 +28,7 @@ echo "boot: clean"
 
 if [ -f tools/bot.gd ] && [ "${SKIP_BOT:-0}" != "1" ]; then
   echo "== 5/5 bot playthrough"
-  "$GODOT" --headless res://tools/runner.tscn -- --tool=res://tools/bot.gd >"$LOG" 2>&1 || fail bot
+  "$GODOT" --headless --fixed-fps 60 res://tools/runner.tscn -- --tool=res://tools/bot.gd >"$LOG" 2>&1 || fail bot
   noisy && fail "bot produced errors/warnings"
   grep -E "^bot" "$LOG"
 fi
