@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	flash_v = 0.0 if flash_v > 0.5 else maxf(0.0, flash_v - delta * 6.0)
 	var over: bool = Run.clock.overflow and Run.active
 	mat.set_shader_parameter("chroma", (1.0 if over else 0.0) + crack_boost * 0.6)
-	mat.set_shader_parameter("cracks", clampf((0.35 if over else 0.0) + crack_boost, 0.0, 1.0))
+	mat.set_shader_parameter("cracks", clampf((0.16 if over else 0.0) + crack_boost, 0.0, 1.0))
 	crack_boost = maxf(0.0, crack_boost - delta * 1.5)
 	mat.set_shader_parameter("darken", 0.0)
 	mat.set_shader_parameter("fade", fade)

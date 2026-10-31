@@ -116,11 +116,13 @@ func _clock_read() -> void:
 	for secs: float in [1800.0, 1200.0, 600.0, 90.0]:
 		Dev.set_clock(secs)
 		Run.pending_threshold = -1
+		rs.threshold.visible = false
+		rs.cam.threshold_zoom = false
 		await _frames(90)
 		await RenderingServer.frame_post_draw
 		var img: Image = get_viewport().get_texture().get_image()
-		var vs: Vector2i = img.get_size()
-		var r := Rect2i(vs.x / 2 - 260, vs.y / 2 - 220, 520, 400)
+		var zp: Vector2 = rs.hud.world_to_screen(rs.sim.zenith.pos)
+		var r := Rect2i(clampi(int(zp.x) - 260, 0, img.get_width() - 520), clampi(int(zp.y) - 230, 0, img.get_height() - 400), 520, 400)
 		crops.append(img.get_region(r))
 	var comp: Image = Image.create(520 * 4, 400, false, crops[0].get_format())
 	for i: int in 4:
