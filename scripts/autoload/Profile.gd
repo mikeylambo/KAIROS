@@ -99,6 +99,15 @@ func save() -> bool:
 		return false
 	return true
 
+func write_telemetry(t: Dictionary) -> void:
+	if not persist:
+		return
+	var dir: String = Platform.save_dir() + "telemetry"
+	DirAccess.make_dir_recursive_absolute(dir)
+	var f := FileAccess.open("%s/run_%d.json" % [dir, int(Time.get_unix_time_from_system())], FileAccess.WRITE)
+	if f:
+		f.store_string(JSON.stringify(t, "\t"))
+
 func setting(key: String) -> Variant:
 	return data["settings"].get(key, default_settings().get(key))
 

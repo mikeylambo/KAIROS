@@ -108,6 +108,7 @@ func step(inp: SimInput) -> void:
 		return
 	var rate: float = Multiverse.def().clock_rate
 	Run.clock.tick(DT * rate)
+	Multiverse.note_time(DT * rate)
 	if not Run.active:
 		return
 	Multiverse.tick_threat(Run.clock.elapsed())

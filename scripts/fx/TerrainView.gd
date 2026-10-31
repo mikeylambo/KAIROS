@@ -42,7 +42,13 @@ func _draw() -> void:
 					if g.get_cell(k, y - 1) != TerrainGrid.SOLID:
 						top_open = true
 						break
-				draw_rect(r, fill if not top_open else face)
+				# Depth shading: lit face fades into the mass over 6 rows; faint seams.
+				var depth: int = 0
+				while depth < 6 and g.get_cell(start, y - depth - 1) == TerrainGrid.SOLID:
+					depth += 1
+				draw_rect(r, face.lerp(fill, float(depth) / 6.0))
+				if (y % 4) == 0:
+					draw_line(r.position, Vector2(r.end.x, r.position.y), Color(1, 1, 1, 0.025), 1.0)
 				if top_open:
 					for k: int in range(start, x):
 						if g.get_cell(k, y - 1) != TerrainGrid.SOLID:

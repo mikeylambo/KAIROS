@@ -124,9 +124,11 @@ func _draw() -> void:
 		draw_string(sans, Vector2(0, vs.y * 0.2), card, HORIZONTAL_ALIGNMENT_CENTER, vs.x, 44, Color(1, 1, 1, a2))
 		draw_line(Vector2(vs.x * 0.5 - 140, vs.y * 0.2 + 16), Vector2(vs.x * 0.5 + 140, vs.y * 0.2 + 16), Color(UiStyle.CYAN, a2), 1.0)
 		draw_string(sans, Vector2(0, vs.y * 0.2 + 50), card_sub, HORIZONTAL_ALIGNMENT_CENTER, vs.x, 22, Color(0.8, 0.85, 0.9, a2))
-	if subtitle_t > 0.0:
+	if subtitle_t > 0.0 and subtitle != "":
 		var a3: float = minf(1.0, subtitle_t)
-		draw_string(sans, Vector2(0, vs.y - 110), subtitle, HORIZONTAL_ALIGNMENT_CENTER, vs.x, 30, Color(1, 1, 1, a3))
+		var w: float = sans.get_string_size(subtitle, HORIZONTAL_ALIGNMENT_LEFT, -1, 30).x + 48.0
+		draw_rect(Rect2(vs.x * 0.5 - w * 0.5, vs.y * 0.70 - 34, w, 50), Color(0, 0, 0, 0.55 * a3))
+		draw_string(sans, Vector2(0, vs.y * 0.70), subtitle, HORIZONTAL_ALIGNMENT_CENTER, vs.x, 30, Color(1, 1, 1, a3))
 	if toast_t > 0.0:
 		draw_string(sans, Vector2(0, vs.y - 50), toast_text, HORIZONTAL_ALIGNMENT_CENTER, vs.x, 18, Color(UiStyle.WARN, minf(1.0, toast_t)))
 	if clash >= 0.0:

@@ -185,6 +185,7 @@ func _on_faded() -> void:
 	Events.faded.emit(line)
 	var s: Dictionary = summary()
 	Profile.record_run(s)
+	Profile.write_telemetry(telemetry())
 	Events.run_finished.emit(s)
 
 func _on_insight(d: InsightDef) -> void:
@@ -201,6 +202,24 @@ func end_threat() -> void:
 	var early: bool = clock.phase != RunClock.Phase.FADE_FIGHT
 	clock.end_threat()
 	Events.threat_ended.emit(early)
+
+## GDD §Telemetry (local only): time-to-first-chase, chases/min, time per dimension,
+## threshold picks, clock lost to hits per minute, result.
+func telemetry() -> Dictionary:
+	var minutes: float = maxf(0.01, clock.elapsed() / 60.0)
+	var ftc: int = int(stats.get("first_chase_tick", -1))
+	var per_dim: Dictionary = {}
+	for k: StringName in Multiverse.time_in:
+		per_dim[String(k)] = snappedf(float(Multiverse.time_in[k]), 0.1)
+	return {
+		"seed": int(config.get("seed", 0)), "clock": clock.start,
+		"time_to_first_chase_s": snappedf(ftc / 60.0, 0.01) if ftc >= 0 else -1.0,
+		"chases_per_min": snappedf(float(stats.get("chases", 0)) / minutes, 0.01),
+		"time_per_dimension_s": per_dim,
+		"threshold_picks": taken.map(func(x: StringName) -> String: return String(x)),
+		"clock_lost_to_hits_per_min": snappedf(clock.lost_to_hits / minutes, 0.01),
+		"result": stats.get("result", ""),
+	}
 
 func summary() -> Dictionary:
 	return {

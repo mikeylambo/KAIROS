@@ -23,6 +23,7 @@ var director: First60 = null
 var bot: Object = null
 var summary: Dictionary = {}
 var ended: bool = false
+var pause_on_focus_loss: bool = true
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -114,7 +115,7 @@ func _on_finished(s: Dictionary) -> void:
 	ended = true
 
 func _notification(what: int) -> void:
-	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and not ended and not Platform.is_headless():
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and not ended and pause_on_focus_loss:
 		open_pause("Window lost focus")
 
 func _on_joy(_device: int, connected: bool) -> void:

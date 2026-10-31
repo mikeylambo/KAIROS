@@ -14,6 +14,7 @@ var lair_visible: bool = false
 var spread_count: int = 0
 var corridor_dest: StringName = &""
 var visits: Dictionary = {}
+var time_in: Dictionary = {}  # dimension -> seconds of life spent there
 var fade_fight: bool = false
 ## Bumped on every dimension change so the Sim rebuilds the world.
 var generation: int = 0
@@ -28,6 +29,7 @@ func setup() -> void:
 	marked.clear()
 	consumed.clear()
 	visits.clear()
+	time_in.clear()
 	lair_visible = false
 	spread_count = 0
 	corridor_dest = &""
@@ -117,6 +119,9 @@ func exposure_of(id: StringName) -> float:
 	return float(exposure.get(id, 0.0))
 
 ## Called each sim tick with scaled elapsed seconds.
+func note_time(dt: float) -> void:
+	time_in[current] = float(time_in.get(current, 0.0)) + dt
+
 func tick_threat(elapsed: float) -> void:
 	if Run.clock.threat_ended:
 		return
