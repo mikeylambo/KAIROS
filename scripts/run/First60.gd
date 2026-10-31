@@ -70,6 +70,7 @@ func step() -> void:
 	if not fired.has(&"push_in"):
 		_beat(&"push_in")
 		Events.line_spoken.emit("Thirty minutes. Plenty.")
+		Audio.voice(&"voice_zenith_line")
 		if sim.zenith:
 			sim.zenith.afterimage_ticks = 10
 	if t >= BEATS[&"drones"] and not fired.has(&"drones"):

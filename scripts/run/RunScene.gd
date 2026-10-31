@@ -89,6 +89,7 @@ func _ready() -> void:
 	pause.restart.connect(_restart)
 	pause.quit_title.connect(_abandon)
 	ui.add_child(pause)
+	ui.add_child(DevPanel.new())
 	fade = FadeOverlay.new()
 	fade.post = post
 	fade.zview = zview

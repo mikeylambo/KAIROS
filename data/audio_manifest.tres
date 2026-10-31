@@ -28,5 +28,6 @@ entries = {
 "transmit": "res://assets/audio/sfx/transmit.ogg",
 "ui_move": "res://assets/audio/sfx/ui_move.ogg",
 "ui_select": "res://assets/audio/sfx/ui_select.ogg",
+"voice_zenith_line": "res://assets/audio/voice/voice_zenith_line.mp3",
 "whiff": "res://assets/audio/sfx/whiff.ogg"
 }

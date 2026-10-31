@@ -79,9 +79,7 @@ func _first60() -> void:
 	rs.bot = BotDirector.new("first60")
 	var beat_cb := func(b: StringName) -> void: _queue("first60_" + String(b), 25 if b != &"push_in" else 40)
 	Events.tutorial_beat.connect(beat_cb)
-	var launch_cb := func(_p: Vector2, _d: Vector2) -> void:
-		if not FileAccess.file_exists("res://screens/feel_gate_launch%s.png" % suffix) or true:
-			_queue("feel_gate_launch", 2)
+	var launch_cb := func(_p: Vector2, _d: Vector2) -> void: _queue("feel_gate_launch", 1)
 	Events.launched.connect(launch_cb, CONNECT_ONE_SHOT)
 	var arrival := [false]
 	var tx_cb := func(_a: Vector2, _b: Vector2, chase: bool) -> void:
@@ -97,7 +95,7 @@ func _first60() -> void:
 		if not mid_done and c.chase_target != null and c.chase_t > 0 and c.chase_t < Tuning.t.chase_window_f - 8:
 			mid_done = true
 			await shot("feel_gate_midchase")
-		await _pump(rs, 0)
+		await _pump(rs, 1)
 	Events.tutorial_beat.disconnect(beat_cb)
 	Events.transmitted.disconnect(tx_cb)
 	await _frames(30)

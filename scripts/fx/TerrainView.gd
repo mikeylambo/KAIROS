@@ -4,8 +4,14 @@ extends Node2D
 
 const T: float = 32.0
 var cam: GameCamera
+var beam_on: bool = false
 
-func _process(_d: float) -> void:
+func _ready() -> void:
+	Events.beam_started.connect(func(_p: Vector2) -> void: beam_on = true)
+	Events.beam_ended.connect(func(_p: Vector2, _f: bool) -> void: beam_on = false)
+
+func _process(d: float) -> void:
+	modulate = modulate.lerp(Color(0.6, 0.6, 0.6) if beam_on else Color.WHITE, minf(1.0, d * 10.0))
 	queue_redraw()
 
 func _draw() -> void:

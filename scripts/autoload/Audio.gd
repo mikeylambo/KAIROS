@@ -108,6 +108,20 @@ func play(key: StringName, pitch: float = 1.0, vol_db: float = 0.0) -> void:
 	p.volume_db = vol_db
 	p.play()
 
+## Voice lines play on the Voice bus (top of the mix), only if a real file exists.
+func voice(key: StringName) -> void:
+	if not enabled:
+		return
+	var path: String = Tuning.audio.resolve(key)
+	if path == "":
+		return
+	var p := AudioStreamPlayer.new()
+	p.bus = "Voice"
+	p.stream = load(path)
+	add_child(p)
+	p.finished.connect(p.queue_free)
+	p.play()
+
 func cue_for_dimension(id: StringName) -> void:
 	if Run.clock.overflow:
 		return

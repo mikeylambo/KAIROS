@@ -9,11 +9,18 @@ var layers: Array = []  # per layer: Array of [Rect2|Vector2, Color, kind]
 var textures: Array[Texture2D] = []
 var t: float = 0.0
 var built_id: StringName = &""
+var beam_on: bool = false
+var beam_dark: float = 0.0
+
+func _ready() -> void:
+	Events.beam_started.connect(func(_p: Vector2) -> void: beam_on = true)
+	Events.beam_ended.connect(func(_p: Vector2, _f: bool) -> void: beam_on = false)
 
 const FACTORS: Array[float] = [0.0, 0.08, 0.2, 0.38, 0.6]
 
 func _process(delta: float) -> void:
 	t += delta
+	beam_dark = move_toward(beam_dark, 1.0 if beam_on else 0.0, delta * 8.0)
 	if cam and cam.sim and Multiverse.current != built_id:
 		_build()
 	queue_redraw()
@@ -137,3 +144,5 @@ func _draw() -> void:
 				var wy: float = fposmod(k * 89.0, vs.y)
 				draw_line(Vector2(wx, wy), Vector2(wx + 60.0, wy), Color(1, 1, 1, 0.12), 1.0)
 	draw_rect(Rect2(Vector2.ZERO, vs), Color(dim.palette[0], 0.18))
+	if beam_dark > 0.0:
+		draw_rect(Rect2(Vector2.ZERO, vs), Color(0, 0, 0, 0.4 * beam_dark))

@@ -235,10 +235,17 @@ func _draw_beam(z: Zenith) -> void:
 	var w: float = ZenithKi.beam_width(c)
 	var length: float = 40.0 * 32.0
 	var flick: float = 1.0 + 0.08 * sin(t * 50.0)
-	draw_line(dir * 20.0, dir * length, Color(0.25, 0.96, 1.0, 0.35), w * 1.9 * flick)
-	draw_line(dir * 20.0, dir * length, Color(1.0, 0.25, 0.85, 0.35), w * 1.3 * flick)
-	draw_line(dir * 20.0, dir * length, Color(2.6, 2.6, 2.8), w * 0.7)
-	draw_circle(dir * 22.0, w * 0.9, Color(2.6, 2.6, 2.8))
+	var o: Vector2 = dir * 18.0
+	draw_line(o, dir * length, Color(0.25, 0.96, 1.0, 0.30), w * 2.1 * flick)
+	draw_line(o, dir * length, Color(1.0, 0.25, 0.85, 0.40), w * 1.45 * flick)
+	draw_line(o, dir * length, Color(0.85, 1.0, 1.0, 0.9), w * 0.95)
+	draw_line(o, dir * length, Color(3.0, 3.0, 3.2), w * 0.5)
+	for k: int in 6:
+		var along: float = fposmod(t * 2200.0 + k * 230.0, length)
+		var side: Vector2 = dir.orthogonal() * (w * 0.6) * (1.0 if k % 2 == 0 else -1.0)
+		draw_line(dir * along + side, dir * (along + 90.0) + side * 1.4, Color(1, 1, 1, 0.6), 2.0)
+	draw_circle(o, w * 0.55, Color(3.0, 3.0, 3.2))
+	draw_arc(o, w * 0.75 + 4.0 * sin(t * 40.0), 0, TAU, 24, Color(0.25, 0.96, 1.0, 0.8), 2.0)
 	for sp: Vector2 in cam.sim.split_points:
 		var local: Vector2 = cam.vp(sp) - global_position
 		for s: float in [-0.45, 0.45]:

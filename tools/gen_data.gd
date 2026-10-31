@@ -194,6 +194,7 @@ func _misc() -> void:
 	var au := AssetManifest.new()
 	for k: String in ["hit_light", "hit_heavy", "transmit", "beam_charge", "beam_fire", "beam_end", "time_loss", "threshold", "perfect", "burst", "field", "whiff", "ui_move", "ui_select", "jump", "crack", "bloom_roar"]:
 		au.entries[k] = "res://assets/audio/sfx/%s.ogg" % k
+	au.entries["voice_zenith_line"] = "res://assets/audio/voice/voice_zenith_line.mp3"
 	for k: String in ["music_threshold", "music_leadfall", "music_skyreach", "music_corridor", "music_overflow", "music_fade_fight", "music_title"]:
 		au.entries[k] = "res://assets/audio/music/%s.ogg" % k
 	_save(au, "res://data/audio_manifest.tres")

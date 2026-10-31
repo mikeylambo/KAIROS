@@ -80,8 +80,8 @@ func _process(delta: float) -> void:
 		var z: Zenith = cam.sim.zenith
 		ghost_tick += 1
 		if z.afterimage_ticks > 0 and ghost_tick % 2 == 0:
-			var col: Color = Color(0.25, 0.96, 1.0, 0.55) if (ghost_tick / 2) % 2 == 0 else Color(1.0, 0.25, 0.85, 0.55)
-			ghosts.append({"pos": z.pos, "t": 0.0, "life": 0.25, "col": col, "facing": z.facing})
+			var col: Color = Color(0.25, 0.96, 1.0, 0.32) if (ghost_tick / 2) % 2 == 0 else Color(1.0, 0.25, 0.85, 0.32)
+			ghosts.append({"pos": z.pos, "t": 0.0, "life": 0.2, "col": col, "facing": z.facing})
 	for p: Dictionary in parts:
 		p["t"] = float(p["t"]) + delta
 		p["pos"] = (p["pos"] as Vector2) + (p["vel"] as Vector2) * delta
@@ -115,8 +115,8 @@ func _draw() -> void:
 		var col: Color = g["col"]
 		col.a *= k
 		var f: float = float(g["facing"])
-		draw_colored_polygon(PackedVector2Array([p + Vector2(-8 * f, -34), p + Vector2(8 * f, -34), p + Vector2(10 * f, -8), p + Vector2(7 * f, 30), p + Vector2(-7 * f, 30), p + Vector2(-9 * f, -8)]), col)
-		draw_circle(p + Vector2(f, -31), 7.0, col)
+		draw_colored_polygon(PackedVector2Array([p + Vector2(-7 * f, -18), p + Vector2(7 * f, -18), p + Vector2(6 * f, 4), p + Vector2(4 * f, 32), p + Vector2(-4 * f, 32), p + Vector2(-6 * f, 4)]), col)
+		draw_circle(p + Vector2(f, -29), 6.5, col)
 	for l: Dictionary in lines:
 		var k2: float = 1.0 - float(l["t"]) / float(l["life"])
 		var p2: Vector2 = cam.vp(l["pos"]) + (l["dir"] as Vector2) * float(l["t"]) * 2400.0
